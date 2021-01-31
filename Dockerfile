@@ -57,6 +57,9 @@ RUN cd /tmp && \
   mv code-server* /usr/local/lib/code-server && \
   ln -s /usr/local/lib/code-server/code-server /usr/local/bin/code-server
 
+RUN curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+    apt-get install -y nodejs
+
 ENV PORT=8080
 EXPOSE 8080
 USER coder
